@@ -1,9 +1,15 @@
 const board = document.getElementById('board');
 const blocks = [];
 const players = ['X', 'O'];
-let currentPlayer = 0;
+let currentPlayer = randomPlayerStart();
 
-document.querySelector('.turn').textContent = 'Player X\'s turn';
+document.querySelector('.turn').textContent = `Player ${players[currentPlayer]}'s turn`;
+function randomPlayerStart() {
+    let pfCurrentPlayer = Math.floor(Math.random() * 2);
+    console.log('the number of the player is : ' + pfCurrentPlayer);
+    
+    return pfCurrentPlayer;
+}
 
 // Create blocks
 for (let i = 0; i < 9; i++) {
@@ -44,9 +50,12 @@ function checkWin() {
         for (let i = 0; i < blocks.length; i++) {
             blocks[i].textContent = '';
         }
-        currentPlayer = 0;
+        currentPlayer = randomPlayerStart();
+        document.querySelector('.turn').textContent = `Player ${players[currentPlayer]}'s turn`;
+        return currentPlayer;
     }
-    // if the class restart is clicked, the game will reset
+    // if the class restart is clicked, the game will reset and 'currentPlayer = randomPlayerStart();' will be called
     document.querySelector('.restart').addEventListener('click', resetGame);
+    
 
 }
