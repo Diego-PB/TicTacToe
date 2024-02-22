@@ -43,4 +43,7 @@ function checkWin() {
         }
         currentPlayer = 0;
     }
+    // if the class restart is clicked, the game will reset
+    document.querySelector('.restart').addEventListener('click', resetGame);
+
 }
