@@ -48,12 +48,19 @@ h1 {
     text-decoration: underline;
 }
 
+.turn {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1rem;
+    text-decoration: underline black;
+}
+
 .restart {
     color: black;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 40px 60px -10px 60px;
+    margin: 20px 60px -30px 60px;
     cursor: pointer;
     padding: 10px 20px;
     border: 1px solid black;

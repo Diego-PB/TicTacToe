@@ -3,6 +3,8 @@ const blocks = [];
 const players = ['X', 'O'];
 let currentPlayer = 0;
 
+document.querySelector('.turn').textContent = 'Player X\'s turn';
+
 // Create blocks
 for (let i = 0; i < 9; i++) {
     const block = document.createElement('div');
@@ -19,6 +21,7 @@ function addMove(e) {
         currentPlayer = (currentPlayer + 1) % players.length;
         checkWin();
     }
+    document.querySelector('.turn').textContent = `Player ${players[currentPlayer]}'s turn`;
 }
 
 function checkWin() {
